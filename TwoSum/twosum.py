@@ -21,3 +21,11 @@ def alternative(nums, target):
     return(False)
 
 alternative(nums, target)
+
+
+def profit(prices):
+    sub = []
+    for i in range(len(prices)-1):
+        if prices[i] < prices[i+1]:
+            sub.append(prices[i])
+    
