@@ -14,17 +14,13 @@ def solution(fruits):
             dict[x] = 1
         else:
             dict[x] += 1
-    return(dict)
-
+    return dict
 
 print(solution(fruits))
 
-
 def noDupes(fruits):
-    new = []
-    for x in fruits:
-        if x not in new:
-            new.append(x)
-    return(new)
+    new = list(set(fruits))
+    return new
+
 
 print(noDupes(fruits))
