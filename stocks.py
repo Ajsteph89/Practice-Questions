@@ -10,19 +10,13 @@ prices = [2, 4, 1]
 
 
 def profit(prices):
-    sub = []
-    for i in range(len(prices)-1):
-        if prices[i] < prices[i+1]:
-            sub.append(prices[i])
-    
-    smallest = sub[0]
-    sell = prices[prices.index(smallest):]
-    print(sell)
-    largest = max(sell)
-    if largest > smallest:
-        return largest-smallest
-    else:
-        return 0
-
+        res = 0
+        l = 0
+        for x in range(1, len(prices)):
+            if prices[x] < prices[l]:
+                l = x
+            # determines if existing result or the new calc is higher
+            res = max(res, prices[x] - prices[l])
+        return res
 
 print(profit(prices))
