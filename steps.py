@@ -21,6 +21,7 @@ def staircase(N, step):
             if (sum(x)==4):
                 count+=1
         N-=1
+        
     return(count)
 
 
