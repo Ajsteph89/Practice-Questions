@@ -16,6 +16,7 @@ def isHappy(n):
     while count <= 10:
         digits = [int(d) for d in str(n)]
         squares = []
+        
         for x in digits:
             squares.append(int(math.pow(x,2)))
 

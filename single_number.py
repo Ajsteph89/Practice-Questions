@@ -7,7 +7,12 @@ from collections import Counter
 nums = [4,1,2,1,2]
 
 def singleNumber(nums):
-    count = Counter(nums)
-    return min(count, key=count.get)
+    counts = {x:nums.count(x) for x in nums}
+    x = min(counts, key=counts.get)
+    
+    if counts[x] == 1:
+        return x
+    else:
+        return -1
 
 print(singleNumber(nums))
