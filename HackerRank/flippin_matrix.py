@@ -1,7 +1,4 @@
-# reverse column 2
-# reverse row 0 
-# sum values in upper left quad
-
+# find the maximum value in the top left quadrant of the matrix by only being able to flip (mirror) columns and rows order
 matrix = [
     [112, 42, 83, 119], 
     [56, 125, 56, 49],
@@ -9,27 +6,15 @@ matrix = [
     [62, 98, 114, 108]
 ]
 
+def matrixFlip(matrix):
+    length= len(matrix)
+    total = 0
 
-length = len(matrix)
+    for x in range(length//2):
+        for y in range(length//2):
+            total += max(matrix[x][y], matrix[x][length-y-1], matrix[length-x-1][y], matrix[length-x-1][length-y-1])
 
-for i in range(length):
-    matrix[i][-2]
-
-print(matrix)
-
-
-# row 0 column 2
-# row 3 column 2
-# matrix[0][2] = matrix[3][2]
-
-# matrix[0]= matrix[0][::-1]
+    return total
 
 
-# print((matrix[0][1]))
-# print((matrix[1][0]))
-# print(matrix[1][1]+matrix[1][0]+matrix[0][1]+matrix[0][0])
-
-# for x in range(len(matrix)):
-#     matrix[x].sort(reverse=True)
-#     print(matrix[x])
-        
+print(matrixFlip(matrix))
