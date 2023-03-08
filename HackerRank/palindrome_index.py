@@ -1,7 +1,7 @@
 # determine the index of a letter in the given string that could be removed to make the string a palindrome
 
 s = "aaab"
-    # "aaab"
+
 
 def palindromeIndex(s):
     # check if initial s is a palindrome
